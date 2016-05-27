@@ -9,6 +9,11 @@ module SimpleCalendar
       raise 'month_calendar requires a block' unless block_given?
       SimpleCalendar::MonthCalendar.new(self, options).render(&block)
     end
+    
+    def agenda_calendar(options={}, &block)
+      raise 'agenda_calendar requires a block' unless block_given?
+      SimpleCalendar::AgendaCalendar.new(self, options).render(&block)
+    end
 
     def week_calendar(options={}, &block)
       raise 'week_calendar requires a block' unless block_given?
